@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour {
     private int currentActiveCoins = 0;
     
     [Header("Spawn Range")]
-    public float minX = -8f;
-    public float maxX = 8f;
-    public float minY = -4f;
-    public float maxY = 4f;
+    public float minX = -6f;
+    public float maxX = 6f;
+    public float minY = -3f;
+    public float maxY = 3f;
     void Start() {
         SpawnBatch();
     }
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
         if (currentScore >= targetScore) {
             Debug.Log("you won");
         }
-        else if (currentActiveCoins <= 0) {
+        if (currentActiveCoins <= 0) {
             SpawnBatch();
         }
     }

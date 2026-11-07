@@ -28,8 +28,12 @@ public class PlayerMovement : MonoBehaviour {
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
-        
+
         if (other.gameObject.CompareTag("Enemy")) {
+            if (gameManager != null && gameManager.currentScore >= gameManager.targetScore) {
+                return;
+            }
+            //if we didn't won yet then we lost here 
             Debug.Log("you lose");
         }
         else if (other.gameObject.CompareTag("Coin")) {
